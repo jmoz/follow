@@ -16,5 +16,5 @@ def search_tweets_text(q, c):
 
 
 @celery.task
-def fav(q, c):
-    model.Favoriter(multiple_q=q, count=c).run()
+def fav(q, c, delay):
+    model.Favoriter(multiple_q=q, count=c, delay_up_to=delay).run()
